@@ -1,9 +1,10 @@
+package HomeWork_2;
+
 public class HomeWork_08_09_2024_2 {
     public static void main(String[] args) {
         countingMoney("Диана", 66660, 0.15);
         countingMoney("Андрей", 77770, 0.15);
         countingMoney("Мария", 88880, 0.15);
-
     }
 
     public static void countingMoney(String name, int money, double percent) {

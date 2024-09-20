@@ -1,3 +1,5 @@
+package Homework_1;
+
 import java.util.Random;
 
 public class HomeWork_7_8_2 { // Задание 2.
