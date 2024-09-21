@@ -4,18 +4,20 @@ import java.util.Scanner;
 
 public class HomeWork_14_09_2024 {
     public static void main(String[] args) {
-        task_2();
+        task_1();
     }
 
     static void task_1() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите число n:");
+        StringBuilder sb = new StringBuilder();
         int numberN = sc.nextInt();
         for (int oddNum = 1; oddNum < numberN; oddNum++) {
             if (oddNum % 2 != 0) {
-                System.out.println("все нечётные числа от 1 до " + numberN + " это: " + oddNum);
+                sb.append(oddNum).append(" ");
             }
         }
+        System.out.println("все нечётные числа от 1 до " + numberN + " это: " + sb);
     }
 
     static void task_2() {
