@@ -4,39 +4,37 @@ import java.util.Scanner;
 
 public class HomeWork_15_09_2024 {
     public static void main(String[] args) {
+        task_1();
     }
 
     static void task_1() {
         String text = "FGjk6h384df32g96D7T456Th123";
-        int lettersCount = 0, numberCount = 0, numberCount0_4 = 0, numberCount5_9 = 0, upperCaseCount = 0, lowerCaseCount = 0;
+        int lettersCount = 0, numberCount = 0, numberCount0_4 = 0,
+                numberCount5_9 = 0, upperCaseCount = 0, lowerCaseCount = 0;
         for (int i = 0; i < text.length(); i++) {
-            if (Character.isLetter(text.charAt(i))) {
+            char s = text.charAt(i);
+            if (Character.isLetter(s)) {
                 lettersCount++;
             }
-            if (Character.isDigit(text.charAt(i))) {
+            if (Character.isDigit(s)) {
                 numberCount++;
             }
-        }
-        System.out.println(numberCount + " - Чисел. " + lettersCount + " - Букв.");
-        for (int i = 0; i < text.length(); i++) {
-            if (text.charAt(i) >= '0' && text.charAt(i) <= '4') {
+            if (s >= '0' && s <= '4') {
                 numberCount0_4++;
             }
-            if (text.charAt(i) >= '5' && text.charAt(i) <= '9') {
+            if (s >= '5' && s <= '9') {
                 numberCount5_9++;
             }
-        }
-        System.out.println(numberCount0_4 + " числа из диапазана: от 0 до 4");
-        System.out.println(numberCount5_9 + " числа из диапазана: от 5 до 9");
-
-        for (int i = 0; i < text.length(); i++) {
-            if (Character.isUpperCase(text.charAt(i))) {
+            if (Character.isUpperCase(s)) {
                 upperCaseCount++;
             }
-            if (Character.isLowerCase(text.charAt(i))) {
+            if (Character.isLowerCase(s)) {
                 lowerCaseCount++;
             }
         }
+        System.out.println(numberCount + " - Чисел. " + lettersCount + " - Букв.");
+        System.out.println(numberCount0_4 + " числа из диапазана: от 0 до 4");
+        System.out.println(numberCount5_9 + " числа из диапазана: от 5 до 9");
         System.out.println(upperCaseCount + " - Заглавных букв. " + lowerCaseCount + " - Малых букв.");
     }
 
@@ -57,6 +55,7 @@ public class HomeWork_15_09_2024 {
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите ваше слово чётной длины:");
         String text = scan.nextLine();
-        System.out.println("Возврат два средних знака в строке " + text + ". Это: " + text.substring(text.length() / 2 - 1, text.length() / 2 + 1));
+        System.out.println("Возврат два средних знака в строке " + text + ". Это: "
+                + text.substring(text.length() / 2 - 1, text.length() / 2 + 1));
     }
 }
