@@ -1,3 +1,5 @@
+package HomeWork_2;
+
 import java.util.Scanner;
 
 public class HomeWork_07_09_24_var_2 {

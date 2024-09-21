@@ -18,6 +18,12 @@ public class HomeWork_14_09_2024 {
             }
         }
         System.out.println("все нечётные числа от 1 до " + numberN + " это: " + sb);
+        int numberN = sc.nextInt();
+        for (int oddNum = 1; oddNum < numberN; oddNum++) {
+            if (oddNum % 2 != 0) {
+                System.out.println("все нечётные числа от 1 до " + numberN + " это: " + oddNum);
+            }
+        }
     }
 
     static void task_2() {
