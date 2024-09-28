@@ -24,16 +24,17 @@ public class HomeWork_22_09_2024 {
         int middleValue = 0;
         for (int i = 0; i < arrayInt.length; i++) {
             value = value + arrayInt[i];
-            middleValue = value / arrayInt.length;
         }
+        middleValue = value / arrayInt.length;
         System.out.println("Среднее значение: " + middleValue);
     }
 
     static void task_2() {
         double[] arrayDouble = {3.5, 5.2, -1.4, 7.8, 2.2};
-        double max = 0.0;
-        double min = 0.0;
+        double max = arrayDouble[0];
+        double min = arrayDouble[0];
         for (int i = 0; i < arrayDouble.length; i++) {
+
             if (arrayDouble[i] > max) {
                 max = arrayDouble[i];
             }
