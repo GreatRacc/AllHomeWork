@@ -14,7 +14,11 @@ public class mainClass {
         System.out.println("Квадрат от числа равен: " + Methods.square(input()));
         System.out.println("Введите ваше имя, а потом фамилию: ");
         System.out.println(Methods.printFullName(input(), input()));
-        System.out.println("Введите слова через запятую: ");
-        System.out.println(Methods.cornerValuesArray(input()));
+        System.out.println("Самая длинная и коротка строка это: ");
+        System.out.println(Methods.cornerValuesArray("раз", "два", "три", "четыре", "пять"));
+        System.out.println("Самое малое и большое число это: ");
+        System.out.println(Methods.cornerValuesArray(10, -45, 76, 34, 12, -12));
+        System.out.println("Самый малый и большой символ это: ");
+        System.out.println(Methods.cornerValuesArray('H', 'a', 'g', 'D', 'v', 'c'));
     }
 }
