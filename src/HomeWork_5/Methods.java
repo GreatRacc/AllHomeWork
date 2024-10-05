@@ -33,6 +33,10 @@ public class Methods {
      * @return возвращает новый массив, состоящий из самой длинной и самой короткой строки.
      */
     static String cornerValuesArray(String... words) {
+        if (words == null || words.length == 0) {
+            System.out.println("Вы ввели пустой массив");
+            return Arrays.toString(words);
+        }
         String longestWord = words[0];
         String shortestWord = words[0];
         for (String check : words) {
@@ -54,6 +58,10 @@ public class Methods {
      * @return возвращает новый массив, состоящий из самого большого числа и самого малого числа.
      */
     static String cornerValuesArray(int... numbers) {
+        if (numbers.length == 0) {
+            System.out.println("Вы ввели пустой массив");
+            return Arrays.toString(numbers);
+        }
         int max = numbers[0];
         int min = numbers[0];
         for (int i : numbers) {
@@ -75,6 +83,10 @@ public class Methods {
      * @return возвращает новый массив, состоящий из самого большого символа и самого малого символа.
      */
     static char[] cornerValuesArray(char... charInput) {
+        if (charInput == null || charInput.length == 0) {
+            System.out.println("Вы ввели пустой массив");
+            return charInput;
+        }
         char max = charInput[0];
         char min = charInput[0];
         for (char i : charInput) {
@@ -86,6 +98,19 @@ public class Methods {
             }
         }
         return new char[]{min, max};
+    }
+
+    /**
+     * Метод вычисления факториала от числа.
+     *
+     * @param number принимает в себя значение переменной типа int из другого класса.
+     * @return возвращает либо факториал числа, либо вернет единицу, в случае если принимаемое число было равно 0.
+     */
+    static int factorialNum(int number) {
+        if (number == 0 || number == 1) {
+            return 1;
+        }
+        return number * factorialNum(number - 1);
     }
 }
 
