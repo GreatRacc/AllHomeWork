@@ -5,6 +5,10 @@ public class Book {
     private Author author;
     private Integer datePublication;
 
+    public Book() {
+
+    }
+
     public Book(String title, Author author, Integer datePublication) {
         this.title = title;
         this.author = author;
@@ -35,7 +39,8 @@ public class Book {
         this.datePublication = datePublication;
     }
 
-    public String getBookInfo() {
-        return "Название книги: " + title + ", Год публикации: " + datePublication + ", Автор: " + author.getAuthorInfo();
+    @Override
+    public String toString() {
+        return "Название книги: " + title + ", Автор: " + author + ", Год публикации: " + datePublication;
     }
 }
