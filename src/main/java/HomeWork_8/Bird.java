@@ -29,11 +29,20 @@ public class Bird extends Animal {
 
     @Override
     public void makeSound() {
-        System.out.print("чирикает.");
+        System.out.println(getNameAnimal() + " чирикает.");
     }
 
     @Override
     public void eat() {
-        System.out.println("Кушает зёрнышки.");
+        System.out.println(getNameAnimal() + " кушает зёрнышки.");
+    }
+
+    @Override
+    public void move() {
+        if (canFly) {
+            System.out.println(getNameAnimal() + " летает.");
+        } else {
+            System.out.println(getNameAnimal() + " бегает.");
+        }
     }
 }

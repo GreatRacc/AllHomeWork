@@ -12,10 +12,14 @@ public class InsertMain {
         bird2.setCanFly(false);
         Animal[] animals = {dog1, dog2, cat1, cat2, bird1, bird2};
         for (Animal animal : animals) {
-            System.out.print(animal.getNameAnimal() + " ");
             animal.makeSound();
-            System.out.print(" ");
             animal.eat();
+            animal.move();
+            if (animal instanceof Pet pet) {
+                pet.play();
+                pet.beFriendly();
+            }
+            System.out.println("-------------");
         }
         System.out.println("Может ли летать Клава? " + bird1.canFly());
         System.out.println("Может ли летать Джонни? " + bird2.canFly());
