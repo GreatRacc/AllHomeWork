@@ -1,6 +1,6 @@
 package HomeWork_8;
 
-public class Cat extends Animal {
+public class Cat extends Animal implements Pet {
     /**
      * Конструктор, принмающий в себя имя животного.
      *
@@ -12,11 +12,26 @@ public class Cat extends Animal {
 
     @Override
     public void makeSound() {
-        System.out.print("мяукает.");
+        System.out.println(getNameAnimal() + " мяукает.");
     }
 
     @Override
     public void eat() {
-        System.out.println("Кушает рыбку.");
+        System.out.println(getNameAnimal() + " кушает рыбку.");
+    }
+
+    @Override
+    public void move() {
+        System.out.println(getNameAnimal() + " кувыркается.");
+    }
+
+    @Override
+    public void play() {
+        System.out.println(getNameAnimal() + " играет с клубком ниток.");
+    }
+
+    @Override
+    public void beFriendly() {
+        System.out.println(getNameAnimal() + " мурлычет.");
     }
 }
