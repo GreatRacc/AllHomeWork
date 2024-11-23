@@ -1,5 +1,7 @@
 package HomeWork_10;
 
+import java.util.Objects;
+
 public class House {
     private final String name;
     private final int floors;
@@ -40,7 +42,7 @@ public class House {
         }
     }
 
-    public House(Builder builder) {
+    private House(Builder builder) {
         this.name = builder.name;
         this.floors = builder.floors;
         this.rooms = builder.rooms;
@@ -51,6 +53,19 @@ public class House {
     public String toString() {
         return "Дом типа: " + name + " имеет этажей " + floors +
                 ", так же в этом доме " + rooms + " комнат, при этом наличие гаража: " + hasGarage;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        House house = (House) o;
+        return floors == house.floors && rooms == house.rooms;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, floors, rooms, hasGarage);
     }
 }
 
