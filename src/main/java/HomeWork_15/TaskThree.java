@@ -11,6 +11,14 @@ public class TaskThree {
         System.out.println(Arrays.toString(result));
     }
 
+    /**
+     * Метод, принимающий массив чисел и число-цель,
+     * возвращающий ближайшие меньший и больший элементы из массива относительно числа-цели.
+     *
+     * @param numbers принимаемый массив чисел.
+     * @param target  принимаемая число-цель.
+     * @return возвращает ближайшие меньший и больший элементы из массива относительно числа-цели.
+     */
     public static int[] findClosestNumbers(int[] numbers, int target) {
         TreeSet<Integer> setNumbers = new TreeSet<>();
         for (int i : numbers) {
@@ -18,9 +26,9 @@ public class TaskThree {
         }
         Integer min = setNumbers.lower(target);
         Integer max = setNumbers.higher(target);
-        if (min == null || max == null){
+        if (min == null || max == null) {
             return new int[]{};
         }
-            return new int[]{min, max};
+        return new int[]{min, max};
     }
 }

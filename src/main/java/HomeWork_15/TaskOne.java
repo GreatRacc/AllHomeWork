@@ -10,6 +10,12 @@ public class TaskOne {
         System.out.println(result);
     }
 
+    /**
+     * Метод, принимающий массив целых чисел и возвращающий список из уникальных чисел.
+     *
+     * @param number принимаемый массив чисел.
+     * @return возвращает уникальные значения из принимаемого массива.
+     */
     public static Set<Integer> getUniqueElements(int[] number) {
         Set<Integer> numbers = new HashSet<>();
         for (Integer i : number) {

@@ -10,6 +10,12 @@ public class TaskTwo {
         System.out.println(result);
     }
 
+    /**
+     * Метод, который принимает массив строк и возвращающий уникальные строки в порядке их появления.
+     *
+     * @param words принимаемый массив строк.
+     * @return возвращает уникальные строки в порядке их появления из принимаемого массива строк.
+     */
     public static LinkedHashSet<String> getOrderedUniqueElements(String[] words) {
         return new LinkedHashSet<>(Arrays.asList(words));
     }
