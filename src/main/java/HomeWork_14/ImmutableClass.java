@@ -9,8 +9,11 @@ final class ImmutableClass {
 
     public ImmutableClass(String name, List<Integer> numbers, CustomMutableClass customMutableClass) {
         this.name = name;
-        this.numbers = List.copyOf(numbers);
-        this.customMutableClass = new CustomMutableClass(customMutableClass.getValue());
+        this.numbers = new ArrayList<>();
+        for (Integer i : numbers) {
+            this.numbers.add(i);
+        }
+        this.customMutableClass = new CustomMutableClass(customMutableClass);
     }
 
     public String getName() {
@@ -18,11 +21,11 @@ final class ImmutableClass {
     }
 
     public List<Integer> getNumbers() {
-        return numbers;
+        return Collections.unmodifiableList(numbers);
     }
 
     public CustomMutableClass getCustomMutableClass() {
-        return new CustomMutableClass(customMutableClass.getValue());
+        return new CustomMutableClass(customMutableClass);
     }
 
     @Override
@@ -30,9 +33,7 @@ final class ImmutableClass {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ImmutableClass that = (ImmutableClass) o;
-        return Objects.equals(name, that.name)
-                && Objects.equals(numbers, that.numbers)
-                && Objects.equals(customMutableClass, that.customMutableClass);
+        return name.equals(that.name) && numbers.equals(that.numbers) && customMutableClass.equals(that.customMutableClass);
     }
 
     @Override

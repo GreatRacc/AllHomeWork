@@ -7,6 +7,10 @@ class CustomMutableClass {
         this.value = value;
     }
 
+    public CustomMutableClass(CustomMutableClass copyValue) {
+        this.value = copyValue.value;
+    }
+
     public int getValue() {
         return value;
     }
