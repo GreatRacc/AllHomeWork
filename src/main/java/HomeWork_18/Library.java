@@ -55,4 +55,16 @@ public class Library {
                 .sorted(comparator)
                 .collect(Collectors.toList());
     }
+
+    public Map<Boolean, List<Book>> partitioningByBook() {
+        return books.values()
+                .stream()
+                .collect(Collectors.partitioningBy(Book::isAvailable));
+    }
+
+    public Map<String, List<Book>> groupBook() {
+        return books.values()
+                .stream()
+                .collect(Collectors.groupingBy(Book::getAuthor));
+    }
 }
