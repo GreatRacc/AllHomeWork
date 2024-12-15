@@ -1,6 +1,8 @@
 package HomeWork_18;
 
 import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
 
 public class MainForLibrary {
     public static void main(String[] args) {
@@ -10,11 +12,13 @@ public class MainForLibrary {
         Book book3 = new Book(3, "книга3", "Александр", true);
         Book book4 = new Book(4, "книга4", "Андрей", false);
         Book book5 = new Book(5, "книга5", "Алексей", true);
+        Book book6 = new Book(6, "книга6", "Наташа", false);
         library.addBook(book1);
         library.addBook(book2);
         library.addBook(book3);
         library.addBook(book4);
         library.addBook(book5);
+        library.addBook(book6);
         System.out.println("Все книги:");
         library.getBooks().forEach(System.out::println);
         System.out.println("----------------------------");
@@ -35,5 +39,19 @@ public class MainForLibrary {
         System.out.println("----------------------------");
         System.out.println("Тест с компаратором по названию:");
         library.getBooks(Comparator.comparing(Book::getTitle)).forEach(System.out::println);
+        System.out.println("----------------------------");
+        System.out.println("Книга по индексу 1 = " + library.getBookById(1));
+        System.out.println("----------------------------");
+        System.out.println("Доступные книги:");
+        library.partitioningByBook().get(true).forEach(System.out::println);
+        System.out.println("----------------------------");
+        System.out.println("Недоступные книги:");
+        library.partitioningByBook().get(false).forEach(System.out::println);
+        System.out.println("----------------------------");
+        System.out.println("Группировка по автору:");
+        library.groupBook().forEach((author, books) -> {
+            System.out.println(author + ":" + books);
+        });
+        System.out.println("----------------------------");
     }
 }

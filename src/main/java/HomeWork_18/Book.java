@@ -33,8 +33,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "ID = " + id +
-                ", Название книги = '" + title + '\'' +
+        return "Название книги = '" + title + '\'' +
                 ", Автор = '" + author + '\'' +
                 ", Доступна? = " + isAvailable +
                 '.';
